@@ -1,166 +1,35 @@
-'use client';
-
-const emails = [
-  {
-    id: 1,
-    sender: 'john@gmail.com',
-    subject: 'Business Meeting',
-    status: 'Unread',
-  },
-  {
-    id: 2,
-    sender: 'client@gmail.com',
-    subject: 'Project Update',
-    status: 'Read',
-  },
-];
-
-export default function DashboardPage() {
+export default function Home() {
   return (
-    <div className="dashboard">
+    <div className="login-page">
+      <div className="login-left">
+        <div className="mail-icon">✉</div>
 
-      {/* SIDEBAR */}
-
-      <aside className="sidebar">
-
-        <h1 className="logo">
-          Email <br />
-          Server
+        <h1>
+          Email <span>Server</span>
         </h1>
 
-        <div className="menu">
-
-          <button className="menu-btn active-btn">
-            Dashboard
-          </button>
-
-          <button className="menu-btn">
-            Emails
-          </button>
-
-          <button className="menu-btn">
-            Inbox
-          </button>
-
+        <div className="preview-box">
+          <div className="preview-icon">✉</div>
         </div>
+      </div>
 
-      </aside>
+      <div className="login-card">
+        <div className="top-icon">✉</div>
 
-      {/* MAIN */}
+        <h2>
+          Email <span>Server</span>
+        </h2>
 
-      <main className="main">
+        <p>Access your email server account</p>
 
-        {/* HERO */}
+        <label>Email Address</label>
+        <input type="email" placeholder="admin@example.com" />
 
-        <section className="hero">
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" />
 
-          <div className="hero-glow"></div>
-
-          <h1 className="hero-title">
-            Dashboard
-          </h1>
-
-          <p className="hero-subtitle">
-            Modern Email Management System
-          </p>
-
-        </section>
-
-        {/* STATS */}
-
-        <section className="stats-grid">
-
-          <div className="stat-card">
-            <p>Total Emails</p>
-            <h2>120</h2>
-          </div>
-
-          <div className="stat-card">
-            <p>Inbox</p>
-            <h2>45</h2>
-          </div>
-
-          <div className="stat-card">
-            <p>Sent</p>
-            <h2>30</h2>
-          </div>
-
-          <div className="stat-card">
-            <p>Storage</p>
-            <h2>80%</h2>
-          </div>
-
-        </section>
-
-        {/* TABLE */}
-
-        <section className="table-box">
-
-          <h2 className="table-title">
-            Email Records
-          </h2>
-
-          <table className="email-table">
-
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Sender</th>
-                <th>Subject</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-
-            <tbody>
-
-              {emails.map((email) => (
-                <tr key={email.id}>
-
-                  <td>{email.id}</td>
-
-                  <td>{email.sender}</td>
-
-                  <td>{email.subject}</td>
-
-                  <td>
-
-                    <span
-                      className={
-                        email.status === 'Read'
-                          ? 'status read'
-                          : 'status unread'
-                      }
-                    >
-                      {email.status}
-                    </span>
-
-                  </td>
-
-                </tr>
-              ))}
-
-            </tbody>
-
-          </table>
-
-        </section>
-
-        {/* BUTTONS DOWN */}
-
-        <div className="bottom-buttons">
-
-          <button className="bottom-btn">
-            Logout
-          </button>
-
-          <button className="bottom-btn">
-            Add Email
-          </button>
-
-        </div>
-
-      </main>
-
+        <button>Login</button>
+      </div>
     </div>
   );
 }
